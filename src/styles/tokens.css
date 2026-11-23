@@ -1,0 +1,20 @@
+:root {
+  /* Gameplay palette from the original mission-phone screens (intro_v2.css),
+     not the tester landing page palette. */
+  --color-bg: #0a1d2e;
+  --color-panel: #203c50;
+  --color-blue: #1f4c6b;
+  --color-teal: #00b894;
+  --color-text: #eaf0f3;
+  --color-muted: #c7d6e3;
+  --color-line: #526772;
+  --color-accent: #f4d35e;
+  --color-gold: #f4d35e;
+  --font-body: Inter, "Segoe UI", Arial, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+  --content-width: 1200px;
+  color-scheme: dark;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+}

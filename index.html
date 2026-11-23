@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a1d2e">
+  <title>Polar Explorers · Refactor Starter</title>
+  <link rel="stylesheet" href="src/styles/tokens.css">
+  <link rel="stylesheet" href="src/styles/app.css">
+  <link rel="stylesheet" href="src/styles/hackers.css">
+</head>
+
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Polar Explorers">
+        <img src="assets/images/Logo.png" alt="">
+        <span>
+          ARCTIC DISCOVERY
+          <small>POLAR EXPLORERS · DEMO</small>
+        </span>
+      </a>
+
+      <div class="progress-meta">
+        <span id="step-count">01 / 09</span>
+        <div class="progress-track"><span id="progress-bar"></span></div>
+      </div>
+
+      <button id="back-button" class="button button-quiet" type="button" hidden>
+        ← Back
+      </button>
+    </header>
+
+    <div class="app-layout">
+      <aside class="step-nav">
+        <p class="eyebrow">TOUR PREVIEW</p>
+        <ol id="step-list"></ol>
+        <p class="side-note">Shared screens, tour-specific story and puzzles.</p>
+      </aside>
+
+      <main id="screen" tabindex="-1">
+        <section class="boot-message">
+          <p class="kicker">STARTING TOUR</p>
+          <h1 class="title">Loading the demo…</h1>
+          <p class="lead">The first screen will appear here.</p>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <span>POLAR EXPLORERS · TROMSØ</span>
+      <span>REFRACTOR STARTER</span>
+    </footer>
+  </div>
+
+  <audio id="audio-player" preload="none"></audio>
+  <script type="module" src="src/app/main.js"></script>
+
+  <script>
+    window.setTimeout(() => {
+      const screen = document.querySelector("#screen");
+      const loadingLabel = screen?.querySelector(".boot-message .kicker");
+
+      if (window.__tourDemoStarted) return;
+      if (loadingLabel?.textContent.trim() !== "STARTING TOUR") return;
+
+      screen.innerHTML = `
+        <section class="boot-message">
+          <p class="kicker">TOUR DID NOT START</p>
+          <h1 class="title">The app script did not load.</h1>
+          <p class="lead">
+            Run a local web server from the Polar-Explorers-Refactor-Starter
+            folder, then open <strong>http://localhost:4173</strong>. In
+            Windows PowerShell, run
+            <code>py -m http.server 4173</code>. Avoid opening index.html
+            directly as a file.
+          </p>
+        </section>
+      `;
+    }, 10000);
+  </script>
+</body>
+
+</html>
