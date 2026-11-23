@@ -1,8 +1,8 @@
 // The original expedition codes, presented as a shorter drag-to-order demo.
 // In chronological order, the code pairs form the safety-depot coordinates.
 export const compassRiddle = {
-  title: "A route hidden in the expeditions.",
-  prompt: "Put Amundsen’s four expeditions in the order they happened. The number on each card will reveal a location.",
+  title: "A location hidden in the expeditions.",
+  prompt: "In this simplified version of a riddle from the original game, players must put Amundsen’s four expeditions in the order they happened. They need to have studied the atlas to solve it. Once the cards are in the correct order, they reveal a location. Give it a try, the correct order is Gjøa, Fram, Maud & Norge",
   instruction: "Drag the expedition cards into chronological order, earliest first.",
   startingOrder: ["norge", "maud", "gjoa", "fram"],
   correctOrder: ["gjoa", "fram", "maud", "norge"],

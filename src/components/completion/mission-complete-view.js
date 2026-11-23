@@ -41,20 +41,20 @@ function loadLeaflet() {
 
 export function mountMissionComplete(root) {
     root.innerHTML = screenFrame(
-        "04 · Sub-mission complete",
-        "You restored the signal.",
-        "Wanny’s radio call is complete. Your next destination is Stortorget.",
+        "04 · First objective complete",
+        "What's next?",
+        "Based on Wanny’s notes, you successfully make contact with the crew. Your first objective is complete. After each objective, this screen shows your progress and next location. Click Continue to map to see the suggested route to your next stop.",
         `
       <section class="mission-success" id="mission-success">
         <div class="mission-success-check" aria-hidden="true">✓</div>
-        <h2>MISSION COMPLETE</h2>
+        <h3>MISSION COMPLETE</h3>
 
         <div class="mission-discovery">
-          <span>YOU RESTORED</span>
-          <strong>WANNY'S SIGNAL</strong>
+          <span>CONTACT ESTABLISHED WITH</span>
+          <strong>THE CREW</strong>
         </div>
 
-        <p class="mission-progress-label">MISSION 1 OF 4 COMPLETE</p>
+        <p class="mission-progress-label">OBJECTIVE 1 OF 4 COMPLETE</p>
         <div
           class="mission-progress-track"
           role="progressbar"

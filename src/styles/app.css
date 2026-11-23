@@ -2913,3 +2913,107 @@ main {
   outline: 3px solid #edc779;
   outline-offset: 3px;
 }
+
+/* Dispatch chat: team replies and image attachments */
+.dispatch-response-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  width: min(100%, 430px);
+  margin: 2px 0 10px;
+  padding: 9px;
+  background: #091923;
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+}
+
+.dispatch-response-form input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  min-height: 42px;
+  padding: 9px 11px;
+  color: var(--color-text);
+  background: #102832;
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  font: inherit;
+}
+
+.dispatch-response-form input[type="file"] {
+  flex: 1;
+  min-width: 0;
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.dispatch-response-form .button {
+  min-height: 40px;
+  padding: 9px 13px;
+}
+
+.dispatch-image-attachment {
+  align-self: flex-start;
+  width: min(86%, 390px);
+  margin: 2px 0 10px;
+  padding: 8px;
+  background: #091923;
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+}
+
+.dispatch-image-attachment figcaption {
+  margin-bottom: 7px;
+  color: var(--color-accent);
+  font: 9px ui-monospace, monospace;
+  letter-spacing: 0.08em;
+}
+
+.dispatch-image-attachment img {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  background: #020b10;
+  border-radius: 6px;
+}
+
+.from-user-photo {
+  align-self: flex-end;
+}
+
+.from-user-photo figcaption {
+  text-align: right;
+}
+
+@media (max-width: 480px) {
+  .dispatch-response-form {
+    gap: 6px;
+    padding: 7px;
+  }
+
+  .dispatch-response-form .button {
+    padding-inline: 10px;
+  }
+
+  .dispatch-image-attachment {
+    width: 94%;
+  }
+}
+
+.dispatch-chat-link {
+  margin-top: 8px;
+  padding: 0;
+  color: var(--color-gold);
+  background: transparent;
+  border: 0;
+  font: inherit;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.dispatch-chat-link:hover {
+  color: var(--color-accent);
+}

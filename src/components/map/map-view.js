@@ -9,9 +9,9 @@ export function mountMap(root, { state, content }) {
   let activeStop = -1;
 
   root.innerHTML = screenFrame(
-    "07 · Amundsen expedition atlas",
-    "Four voyages across the ice.",
-    "Explore the original expedition atlas, route overlays, and timeline stops.",
+    "07 · Inventory",
+    "Amundsen Expedition Atlas",
+    "Besides riddles that use the surrounding environment, some require players to use objects from the inventory. These objects reveal something about the explorer or the story in an engaging way. In this case, the map shows the routes of Amundsen’s main expeditions and gives a brief overview of what happened on each one. Remember them well...",
     `
       <div class="amundsen-map-ui">
         <header class="amundsen-map-intro">
@@ -58,7 +58,7 @@ export function mountMap(root, { state, content }) {
         </section>
       </div>
     `,
-    "Continue to compass riddle →"
+    "Continue demo →"
   );
 
   const world = root.querySelector("#amundsen-map-world");

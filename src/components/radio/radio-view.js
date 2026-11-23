@@ -11,7 +11,7 @@ export function mountRadio(root, { state, content, playAudio, onNext, audioEleme
   let animationFrame = 0;
   let waveformStart = 0;
 
-  root.innerHTML = screenFrame("03 · Radio interaction", "A voice in the static.", "Find Wanny's frequency to hear the original call and its response choices. You can skip the riddle or the full call at any time.", `
+  root.innerHTML = screenFrame("03 · Riddles", "Use Tromsø's artefacts", "Tromsø is full of references to its polar exploration history, making it an excellent setting for an outdoor city escape room that integrate local artefacts into its riddles. In this riddle, players use the mural of Wanny Woldstad at Vervet to contact her. Try entering 6-5-2 to reach Wanny. Once connected, players can interact with her.", `
     <section class="panel radio-panel">
       <div class="tag">SHORTWAVE SIGNAL TUNER</div>
       <canvas class="signal-canvas" id="signal-canvas" aria-label="Radio signal and live audio waveform"></canvas>
@@ -161,7 +161,7 @@ export function mountRadio(root, { state, content, playAudio, onNext, audioEleme
   // Static starts when this screen is entered from the Dispatch button.
   if (!state.wannyCallDone) playAudio("assets/audio/Noise_Wanny.mp3", null, {
     loop: true,
-    volume: 0.18
+    volume: 0.003
   });
   drawTuner();
   refreshTuner();

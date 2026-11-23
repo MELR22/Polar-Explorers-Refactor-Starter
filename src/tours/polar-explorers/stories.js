@@ -7,7 +7,12 @@ export const STORIES = {
             {
                 type: "text",
                 sender: "Dispatch",
-                text: "Hi there. We have just received a SOS transmission from one of our research vessels operating in the Arctic:"
+                text: "Dear field team, great to have on board for this mission!"
+            },
+            {
+                type: "text",
+                sender: "Dispatch",
+                text: "We just received this SOS-call, along with their last position: 74.50845°N, 45.01421°E"
             },
             {
                 type: "file",
@@ -19,22 +24,22 @@ export const STORIES = {
             {
                 type: "text",
                 sender: "Dispatch",
-                text: "We've tried to trace the signal, but we're not equipped to set up a rescue operation."
+                text: "We haven't been able to reestablish the contact, so that will be your first mission!"
             },
             {
                 type: "text",
                 sender: "Dispatch",
-                text: "We need your help!"
+                text: "Great thing you're Tromsø. That city is full with people that now the Arctic inside out."
             },
             {
                 type: "text",
                 sender: "Dispatch",
-                text: "The crew is running out of time and they rely urgently on information to survive."
+                text: "But before you continue, how should we refer to you?"
             },
             {
                 type: "text",
                 sender: "Dispatch",
-                text: "Before we send you in, we need to know who we're working with."
+                text: "Understood, Team {teamName}! we believe its probably Wanny Wolstad that can help to restore communication."
             },
             {
                 type: "input",
@@ -45,26 +50,21 @@ export const STORIES = {
             {
                 type: "text",
                 sender: "Dispatch",
-                text: "Understood, Team {teamName}. You can start your mission once you're are at the Gateway to the Arctic."
+                text: "As the first femal trapper on Svalbard, and mutlitple radio performances, she know the importance of good commincation."
             },
             {
                 type: "text",
                 sender: "Dispatch",
-                text: "Use this photo to find the starting point."
-            },
-            {
-                type: "file",
-                name: "starting_point.jpg",
-                image: "../../../../assets/images/Station_1_gate.jfif"
+                text: "Unforutnelty, we have lost contact with here. This is the last image we received from here."
             },
             {
                 type: "upload",
-                question: "Send us a team picture once you're there, to confirm your location."
+                question: "it too vague, for us, but we believe it shows an artwork of her, and might contain a hidden code to establish contact with here."
             },
             {
                 type: "text",
                 sender: "Dispatch",
-                text: "Location confirmed."
+                text: "Use this radio once you're there."
             },
             {
                 type: "text",
@@ -236,17 +236,17 @@ export const STORIES = {
             {
                 type: "text",
                 sender: "Dispatch",
-                text: "We are receiving your signal..."
+                text: "Okay, great work!"
             },
             {
                 type: "text",
                 sender: "Dispatch",
-                text: "Stand by...."
+                text: "Next, we have to find a route out of the ice."
             },
             {
                 type: "text",
                 sender: "Dispatch",
-                text: "Uploading coordinates..."
+                text: "Hold on. Something is happeni"
             },
             {
                 type: "action",

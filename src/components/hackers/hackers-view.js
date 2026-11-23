@@ -18,9 +18,9 @@ export function mountHackers(root, { content }) {
   const intrusion = content.hackerIntrusion;
 
   root.innerHTML = screenFrame(
-    "05 · Signal intercepted",
-    "The transmission changes.",
-    "Dispatch is sending the rescue coordinates…",
+    "05 · Other game elements",
+    "Making the game come alive.",
+    "Short videos and sudden interruptions bring the game unexpected twist to the mission. In this case, hackers interfere...",
     `
       <section class="panel chat-box hacker-chat-panel" aria-label="Dispatch chat">
         <div class="hacker-scanlines" aria-hidden="true"></div>
@@ -72,7 +72,7 @@ export function mountHackers(root, { content }) {
         </div>
       </section>
     `,
-    "Continue to incoming call →"
+    "Continue demo →"
   );
   root.querySelector(".phone-app")?.classList.add("phone-app-hackers");
   const panel = root.querySelector(".hacker-chat-panel");
