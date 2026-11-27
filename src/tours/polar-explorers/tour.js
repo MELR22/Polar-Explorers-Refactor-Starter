@@ -1,3 +1,4 @@
+import { mountStart } from "../../components/start/start-view.js";
 import { callChoices, callTracks } from "./amundsen-call.js";
 import { compassRiddle } from "./amundsen-riddle.js";
 import { dispatchMessages, hackerIntrusion, hackerMessages, wannyMessages } from "./content.js";
@@ -9,8 +10,9 @@ export const polarExplorersTour = {
   version: 1,
   title: "Polar Explorers",
   theme: "arctic",
-  content: { dispatchMessages, wannyMessages, hackerMessages, hackerIntrusion, wannyCallTracks, wannyCallChoices, callTracks, callChoices, expeditions, compassRiddle },
+  content: { mountStart, dispatchMessages, wannyMessages, hackerMessages, hackerIntrusion, wannyCallTracks, wannyCallChoices, callTracks, callChoices, expeditions, compassRiddle },
   steps: [
+    { id: "start", title: "Polar Explorers Demo", view: "start" },
     { id: "email", title: "Mission briefing", view: "email" },
     { id: "dispatch", title: "Dispatch chat", view: "dispatch" },
     { id: "radio", title: "Riddles", view: "radio" },

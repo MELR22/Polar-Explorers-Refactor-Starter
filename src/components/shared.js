@@ -10,7 +10,7 @@ export const escapeHtml = value =>
 export function screenFrame(kicker, title, description, body, nextLabel = "Continue →") {
   return `<section class="screen">
     <div class="phone-stage-heading">
-      <span class="eyebrow">FIELD PHONE · PLAYABLE</span>
+      <span class="eyebrow">FIELD PHONE</span>
       <span class="phone-stage-caption">INTERACTIVE DEMO</span>
     </div>
 

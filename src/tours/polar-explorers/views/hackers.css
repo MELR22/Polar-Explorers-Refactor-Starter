@@ -1,0 +1,348 @@
+/* Signal interception animation projected inside the Dispatch chat. */
+.hacker-chat-panel {
+    position: relative;
+    max-width: 760px;
+    margin: 18px auto;
+    overflow: hidden
+}
+
+.hacker-chat-panel>.tag {
+    position: relative;
+    z-index: 1
+}
+
+.hacker-chat-stream {
+    position: relative;
+    z-index: 1;
+    max-height: min(58vh, 620px);
+    padding: 15px 0
+}
+
+.hacker-scanlines,
+.hacker-noise,
+.hacker-blackout {
+    position: absolute;
+    inset: 0;
+    pointer-events: none
+}
+
+.hacker-scanlines {
+    z-index: 4;
+    background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, .025) 0 1px, transparent 2px 4px);
+    opacity: .32
+}
+
+.hacker-noise {
+    z-index: 3;
+    background-image: radial-gradient(rgba(255, 255, 255, .12) 1px, transparent 1px);
+    background-size: 6px 6px;
+    opacity: 0;
+    animation: hackerNoise .15s infinite
+}
+
+.hacker-flicker .hacker-noise {
+    opacity: .11
+}
+
+.hacker-blackout {
+    z-index: 7;
+    background: #000;
+    opacity: 0;
+    transition: opacity .05s ease
+}
+
+.hacker-chat-panel.blackout-active .hacker-blackout {
+    opacity: .88
+}
+
+.hacker-disconnect-layer {
+    position: absolute;
+    z-index: 6;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, .87);
+    text-align: center
+}
+
+.hacker-disconnect-layer[hidden] {
+    display: none
+}
+
+.hacker-disconnect-text {
+    color: #ff5058;
+    font: 700 clamp(1.3rem, 4vw, 2rem)/1.2 var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    text-shadow: 2px 0 #00e5ff, -2px 0 #ff224d;
+    animation: hackerGlitch .18s infinite
+}
+
+.hacker-code-card {
+    position: absolute;
+    z-index: 8;
+    top: 22%;
+    left: 8%;
+    width: 84%;
+    max-height: 64%;
+    overflow: auto;
+    margin: 0;
+    background: rgba(2, 12, 18, .93);
+    border-color: #21df74;
+    box-shadow: 0 0 20px rgba(0, 255, 102, .15)
+}
+
+.hacker-code-card pre {
+    margin: 8px 0 0;
+    color: #9af2b0;
+    font: 11px/1.8 ui-monospace, monospace;
+    white-space: pre-wrap
+}
+
+.hacker-code-card .code-line {
+    margin: 4px 0;
+    animation: codeLineIn .2s ease both
+}
+
+.hacker-code-card .code-red {
+    color: #ff7373
+}
+
+.hacker-code-card .code-green {
+    color: #70e995
+}
+
+.hacker-code-card .code-blue {
+    color: #71c9ff
+}
+
+.hacker-code-card .code-yellow {
+    color: #f4d35e
+}
+
+.hacker-mask-message,
+.hacker-video-message {
+    position: relative;
+    z-index: 1;
+    animation: hackerPopIn .35s ease both
+}
+
+.hacker-mask-message {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 90%;
+    margin: 4px 0 12px;
+    padding: 12px;
+    background: #091923;
+    border: 1px solid #b93b46;
+    border-radius: 11px;
+    color: #ff8d82
+}
+
+.hacker-mask-message img {
+    width: 52px;
+    height: 52px;
+    flex: none;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #ff7474
+}
+
+.hacker-mask-message strong {
+    display: block;
+    font-size: 13px;
+    line-height: 1.45
+}
+
+.hacker-video-message {
+    max-width: min(100%, 620px);
+    margin: 5px 0 12px;
+    padding: 10px;
+    background: #091923;
+    border: 1px solid #b93b46;
+    border-radius: 11px
+}
+
+.hacker-video-message>.micro {
+    margin: 0 0 8px;
+    color: var(--color-accent)
+}
+
+.hacker-video-projection {
+    display: block;
+    width: 100%;
+    max-height: min(52vh, 420px);
+    object-fit: contain;
+    background: #000;
+    border-radius: 7px
+}
+
+.hacker-audio-button {
+    margin-top: 9px
+}
+
+.hacker-flicker {
+    animation: hackerPanelFlicker .18s infinite
+}
+
+@keyframes hackerPanelFlicker {
+
+    0%,
+    100% {
+        filter: none
+    }
+
+    20% {
+        filter: brightness(.64) contrast(1.35)
+    }
+
+    40% {
+        filter: brightness(1.18)
+    }
+
+    60% {
+        filter: brightness(.78)
+    }
+
+    80% {
+        filter: brightness(1.1)
+    }
+}
+
+@keyframes hackerNoise {
+    0% {
+        transform: translate(0, 0)
+    }
+
+    25% {
+        transform: translate(2px, -1px)
+    }
+
+    50% {
+        transform: translate(-2px, 2px)
+    }
+
+    75% {
+        transform: translate(1px, -2px)
+    }
+
+    100% {
+        transform: translate(0, 0)
+    }
+}
+
+@keyframes hackerGlitch {
+
+    0%,
+    100% {
+        transform: translate(0, 0)
+    }
+
+    25% {
+        transform: translate(2px, -1px)
+    }
+
+    50% {
+        transform: translate(-2px, 1px)
+    }
+
+    75% {
+        transform: translate(1px, 2px)
+    }
+}
+
+@keyframes codeLineIn {
+    from {
+        opacity: 0;
+        transform: translateX(-5px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@keyframes hackerPopIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    .hacker-flicker {
+        animation: none
+    }
+
+    .hacker-disconnect-text {
+        animation: none
+    }
+
+    .hacker-noise {
+        animation: none
+    }
+}
+
+.hacker-message-bubble {
+    position: relative;
+    padding-right: 56px;
+    padding-bottom: 22px;
+}
+
+.bubble-time {
+    position: absolute;
+    right: 10px;
+    bottom: 6px;
+    color: rgba(235, 244, 247, 0.68);
+    font: 9px ui-monospace, monospace;
+}
+
+.typing-bubble {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 11px 13px;
+    background: var(--color-blue);
+    border: 1px solid #ffffff15;
+    border-radius: 13px 13px 13px 4px;
+}
+
+.typing-bubble span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    animation: typingDot 1.15s infinite ease-in-out;
+}
+
+.typing-bubble span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.typing-bubble span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes typingDot {
+
+    0%,
+    60%,
+    100% {
+        opacity: 0.35;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+}

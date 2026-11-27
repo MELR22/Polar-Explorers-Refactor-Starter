@@ -7,8 +7,10 @@ import { mountHackers } from "./hackers/hackers-view.js";
 import { mountMap } from "./map/map-view.js";
 import { mountRadio } from "./radio/radio-view.js";
 import { mountRiddle } from "./riddle/riddle-view.js";
+import { mountStart } from "./start/start-view.js";
 
 export const stepViews = {
+  start: mountStart,
   email: mountEmail,
   dispatch: mountDispatch,
   radio: mountRadio,

@@ -3017,3 +3017,136 @@ main {
 .dispatch-chat-link:hover {
   color: var(--color-accent);
 }
+
+.start-card {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.start-logo {
+  display: block;
+  width: clamp(90px, 28vw, 150px);
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 22px;
+}
+
+.start-card h2 {
+  margin: 10px 0;
+  font: 700 clamp(1.8rem, 6vw, 2.6rem)/1.1 var(--font-display);
+}
+
+.start-card>p:last-child {
+  max-width: 28ch;
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.email-arrival {
+  animation: email-arrive 0.45s ease-out both;
+}
+
+.email-arrival-wait {
+  margin: 22px 12px;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+@keyframes email-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .email-arrival {
+    animation: none;
+  }
+}
+
+.email-lock-screen {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: 18px;
+  color: #fff;
+  background: #18394c;
+  text-align: center;
+}
+
+.email-lock-screen::before,
+.email-lock-screen::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+}
+
+.email-lock-screen::before {
+  filter: blur(7px);
+  transform: scale(1.06);
+}
+
+.email-lock-screen::after {
+  filter: blur(7px);
+  transform: scale(1.06);
+}
+
+.email-lock-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.email-lock-icon {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.email-lock-date {
+  margin: 0;
+  font-size: 16px;
+}
+
+.email-lock-time {
+  margin-top: 2px;
+  font-size: clamp(3.5rem, 16vw, 5rem);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.email-lock-status {
+  margin: 28px 0 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+}
+
+#screen:focus {
+  outline: none;
+}
