@@ -64,12 +64,12 @@ export function mountCall(root, { playAudio, content, audioElement }) {
   function render() {
     const incoming = !state.active && !state.finished;
     const title = state.active
-      ? "You are connected."
+      ? "Roald Amundsen is calling."
       : state.finished
         ? "Roald Amundsen is calling."
         : "Roald Amundsen is calling.";
     const description = state.active
-      ? "Listen to the original call and choose how to respond."
+      ? "Amundsen has left notes in the inventory to help players find his supply depots. Many of the explorers players meet will also leave an item of interest there. Go to next page to explore this item."
       : state.finished
         ? "Amundsen has left notes in the inventory to help players find his supply depots. Many of the explorers players meet will also leave an item of interest there. Go to next page to explore this item."
         : "This time, the explorer contacts the players directly. During the call, the players have to option to interact with him and and learn more about his life or keep it short and continue with the game.";
